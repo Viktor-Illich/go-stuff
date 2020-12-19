@@ -17,6 +17,7 @@ func main() {
 				for _, v := range values {
 					select {
 					case <-done:
+						return
 					case valueStream <- v:
 					}
 				}
@@ -36,6 +37,7 @@ func main() {
 			for i := 0; i < num; i++ {
 				select {
 				case <-done:
+					return
 				case takeStream <- <-valueStream:
 				}
 			}
@@ -53,6 +55,7 @@ func main() {
 			for true {
 				select {
 				case <-done:
+					return
 				case valueStream <- fn():
 				}
 			}
