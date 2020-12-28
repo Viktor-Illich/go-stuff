@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+// defer works by LIFO
+
 func d1() {
 	for i := 3; i > 0; i-- {
 		defer fmt.Print(i, " ")
