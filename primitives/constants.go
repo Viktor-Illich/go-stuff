@@ -37,6 +37,20 @@ func main() {
 	fmt.Println(Two)
 
 	const (
+		_ int = iota
+		Mon
+		Tue
+		Wen
+		Thu
+		Fri
+		Sut
+		Sun
+	)
+
+	fmt.Println("mon:", Mon)
+	fmt.Println("tue", Tue)
+
+	const (
 		p2_0 Power2 = 1 << iota
 		_
 		p2_2
@@ -50,4 +64,16 @@ func main() {
 	fmt.Println("2^2:", p2_2)
 	fmt.Println("2^4:", p2_4)
 	fmt.Println("2^6:", p2_6)
+
+	const (
+		p4_0 Power2 = 1 << iota
+		_
+		p4_1
+		_
+		p4_2
+	)
+
+	fmt.Println("4^0:", p4_0)
+	fmt.Println("4^1:", p4_1)
+	fmt.Println("4^2:", p4_2)
 }
