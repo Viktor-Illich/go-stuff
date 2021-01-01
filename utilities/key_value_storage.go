@@ -58,14 +58,12 @@ func PRINT() {
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Print("> ")
 	for scanner.Scan() {
 		text := scanner.Text()
 		text = strings.TrimSpace(text)
 		tokens := strings.Fields(text)
 
-
-		fmt.Println(tokens)
-		fmt.Println(len(tokens))
 		switch len(tokens) {
 		case 0:
 			continue
@@ -84,8 +82,6 @@ func main() {
 		case 4:
 			tokens = append(tokens, "")
 		}
-		fmt.Println(tokens)
-		fmt.Println(len(tokens))
 
 		switch tokens[0] {
 		case "PRINT":
@@ -114,5 +110,7 @@ func main() {
 		default:
 			fmt.Println("Unknown command – please try again!")
 		}
+
+		fmt.Print("> ")
 	}
 }
